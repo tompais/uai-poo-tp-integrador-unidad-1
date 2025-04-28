@@ -2,7 +2,7 @@ namespace Trabajo_Práctico_Integrador.GUI.Formularios
 {
     public partial class FormularioBaseAlumno : Form
     {
-        protected NumericUpDown campoDeTextoLegajo;
+        protected NumericUpDownSinFlechas campoDeTextoLegajo;
         protected TextBox campoDeTextoNombre;
         protected TextBox campoDeTextoApellido;
         protected DateTimePicker selectorFechaDeNacimiento;
@@ -24,7 +24,7 @@ namespace Trabajo_Práctico_Integrador.GUI.Formularios
         private void InicializarControlesComunes()
         {
             // Inicializar controles comunes
-            campoDeTextoLegajo = new NumericUpDown
+            campoDeTextoLegajo = new NumericUpDownSinFlechas
             {
                 Minimum = 1, // Valor mínimo
                 Maximum = 999999, // Valor máximo

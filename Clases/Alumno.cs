@@ -6,27 +6,26 @@ namespace Trabajo_Práctico_Integrador.Clases
 {
     public class Alumno
     {
-        public int Legajo { get; set; }
+        public uint Legajo { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public DateOnly Fecha_Nacimiento { private get; set; }
         public DateOnly Fecha_Ingreso { private get; set; }
-        public readonly int Edad;
+        public uint Edad { get => UtilidadDeFecha.ObtenerDiferenciaDeFechasEnAnos(DateOnly.FromDateTime(DateTime.Now), Fecha_Nacimiento); }
         public bool Activo { get; set; } = true;
-        public int Cant_Materias_Aprobadas { private get; set; } = 0;
+        public uint Cant_Materias_Aprobadas { private get; set; } = 0;
 
         public Alumno()
         {
         }
 
-        public Alumno(int legajo, string nombre, string apellido, DateOnly fechaNacimiento, DateOnly fechaIngreso)
+        public Alumno(uint legajo, string nombre, string apellido, DateOnly fechaNacimiento, DateOnly fechaIngreso)
         {
             Legajo = legajo;
             Nombre = nombre;
             Apellido = apellido;
             Fecha_Nacimiento = fechaNacimiento;
             Fecha_Ingreso = fechaIngreso;
-            Edad = UtilidadDeFecha.ObtenerDiferenciaDeFechasEnAnos(DateOnly.FromDateTime(DateTime.Now), Fecha_Nacimiento);
         }
 
         ~Alumno()
@@ -53,8 +52,8 @@ namespace Trabajo_Práctico_Integrador.Clases
             return antiguedad;
         }
 
-        public int Materias_No_Aprobadas() => ConstanteDeMateria.CANTIDAD_DE_MATERIAS_TOTALES - Cant_Materias_Aprobadas;
+        public uint Materias_No_Aprobadas() => ConstanteDeMateria.CANTIDAD_DE_MATERIAS_TOTALES - Cant_Materias_Aprobadas;
 
-        public int Edad_De_Ingreso() => UtilidadDeFecha.ObtenerDiferenciaDeFechasEnAnos(Fecha_Ingreso, Fecha_Nacimiento);
+        public uint Edad_De_Ingreso() => UtilidadDeFecha.ObtenerDiferenciaDeFechasEnAnos(Fecha_Ingreso, Fecha_Nacimiento);
     }
 }

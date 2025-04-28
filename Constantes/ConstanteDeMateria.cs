@@ -2,6 +2,6 @@
 {
     public static class ConstanteDeMateria
     {
-        public const int CANTIDAD_DE_MATERIAS_TOTALES = 36;
+        public const uint CANTIDAD_DE_MATERIAS_TOTALES = 36;
     }
 }

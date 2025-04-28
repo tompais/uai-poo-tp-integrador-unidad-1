@@ -33,7 +33,7 @@ namespace Trabajo_Práctico_Integrador.GUI.Formularios
         private void BotonAceptar_Click(object sender, EventArgs e)
         {
             // Actualizar los datos del alumno
-            Alumno.Legajo = (int)campoDeTextoLegajo.Value;
+            Alumno.Legajo = (uint)campoDeTextoLegajo.Value;
             Alumno.Nombre = campoDeTextoNombre.Text;
             Alumno.Apellido = campoDeTextoApellido.Text;
 
@@ -50,7 +50,7 @@ namespace Trabajo_Práctico_Integrador.GUI.Formularios
 
             if (materiasAprobadasModificadas)
             {
-                Alumno.Cant_Materias_Aprobadas = (int)campoMateriasAprobadas.Value;
+                Alumno.Cant_Materias_Aprobadas = (uint)campoMateriasAprobadas.Value;
             }
 
             Alumno.Activo = checkBoxActivo.Checked;

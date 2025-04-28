@@ -133,11 +133,12 @@ namespace Trabajo_Práctico_Integrador
 
             if (formModificarAlumno.ShowDialog() == DialogResult.OK)
             {
+                var alumnoModificado = formModificarAlumno.Alumno;
                 // Actualizar la lista en memoria
-                ActualizarAlumnoEnLista(alumnoSeleccionado);
+                ActualizarAlumnoEnLista(alumnoModificado);
 
                 // Actualizar la grilla con los datos modificados
-                ActualizarFilaEnGrilla(alumnoSeleccionado);
+                ActualizarFilaEnGrilla(alumnoModificado);
             }
         }
 
@@ -154,7 +155,7 @@ namespace Trabajo_Práctico_Integrador
         {
             var row = grillaDeDatosDeAlumnos.Rows
                 .Cast<DataGridViewRow>()
-                .FirstOrDefault(r => (int)r.Cells["Legajo"].Value == alumno.Legajo);
+                .FirstOrDefault(r => (uint)r.Cells["Legajo"].Value == alumno.Legajo);
 
             if (row != null)
             {
@@ -162,6 +163,9 @@ namespace Trabajo_Práctico_Integrador
                 row.Cells["Apellido"].Value = alumno.Apellido;
                 row.Cells["Edad"].Value = alumno.Edad;
                 row.Cells["Activo"].Value = alumno.Activo;
+                InsertarAntiguedadEnCampoDeTextoFormateado();
+                ActualizarCampoDeTextoDeMateriasNoAprobadas();
+                ActualizarCampoDeTextoDeEdadDeIngreso();
             }
         }
 

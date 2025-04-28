@@ -15,7 +15,7 @@ namespace Trabajo_Práctico_Integrador.GUI.Formularios
         private void BotonAceptar_Click(object sender, EventArgs e)
         {
             Alumno = new Alumno(
-                (int)campoDeTextoLegajo.Value,
+                (uint)campoDeTextoLegajo.Value,
                 campoDeTextoNombre.Text,
                 campoDeTextoApellido.Text,
                 DateOnly.FromDateTime(selectorFechaDeNacimiento.Value),
