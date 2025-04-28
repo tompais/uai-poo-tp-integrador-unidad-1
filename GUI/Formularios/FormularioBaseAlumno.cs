@@ -51,8 +51,8 @@ namespace Trabajo_Práctico_Integrador.GUI.Formularios
             selectorFechaDeIngreso = new DateTimePicker
             {
                 Size = new Size(200, 23),
-                MaxDate = DateTime.Now.AddYears(70), // Fecha máxima es hoy
-                MinDate = DateTime.Now // Fecha máxima es hoy
+                MaxDate = DateTime.Now, // Fecha máxima es hoy  
+                MinDate = DateTime.Now.AddDays(-1), // Fecha mínima es hoy  
             };
 
             botonAceptar = new Button
@@ -125,7 +125,6 @@ namespace Trabajo_Práctico_Integrador.GUI.Formularios
         private void ActualizarSelectorDeFechaDeIngreso(object sender, EventArgs e)
         {
             var fechaDeReferencia = selectorFechaDeNacimiento.Value.AddYears(18);
-            selectorFechaDeIngreso.MaxDate = fechaDeReferencia.AddYears(70);
             selectorFechaDeIngreso.MinDate = fechaDeReferencia;
             selectorFechaDeIngreso.Value = fechaDeReferencia;
         }
