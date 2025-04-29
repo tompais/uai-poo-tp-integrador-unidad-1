@@ -202,7 +202,7 @@
             Controls.Add(botonAgregarAlumno);
             Controls.Add(grillaDeDatosDeAlumnos);
             Name = "GrillaDeAlumnos";
-            Text = "Form1";
+            Text = "Grilla de Alumnos";
             Load += GrillaDeAlumnos_Load;
             ((System.ComponentModel.ISupportInitialize)grillaDeDatosDeAlumnos).EndInit();
             ResumeLayout(false);
